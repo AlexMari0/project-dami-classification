@@ -84,6 +84,6 @@ Special thanks to Kaggle for hosting the competition and providing the dataset.
 
 ## Contributors
 
+- 12S21011 [Alex Mario Kristian](https://github.com/AlexMari0)
 - 12S21002 [Sitogab Antonio Girsang](https://github.com/SitogabAntonio)
 - 12S21016 [Kevin Unedo Samosir](https://github.com/KevinUnedo)
-- 12S21011 [Alex Mario Kristian](https://github.com/AlexMari0)
