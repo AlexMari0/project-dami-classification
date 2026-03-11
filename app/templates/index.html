@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Depression Prediction Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card mx-auto" style="max-width: 900px;">
+            <div class="card-header">
+                <i class="fas fa-heartbeat"></i> Depression Prediction Tool
+            </div>
+            <div class="card-body">
+                <p class="text-center mb-4 text-muted">
+                    Fill out the form below to predict the likelihood of depression.
+                </p>
+                <form method="POST" action="{{ url_for('predict') }}">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="gender"><i class="fas fa-venus-mars"></i> Gender</label>
+                            <select class="form-control" id="gender" name="gender" required>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="age"><i class="fas fa-calendar-alt"></i> Age</label>
+                            <input type="number" class="form-control" id="age" name="age" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="city"><i class="fas fa-city"></i> City</label>
+                        <input type="text" class="form-control" id="city" name="city" placeholder="Enter your city" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="working_status"><i class="fas fa-briefcase"></i> Working Professional or Student</label>
+                            <select class="form-control" id="working_status" name="working_status">
+                                <option value="Working Professional">Working Professional</option>
+                                <option value="Student">Student</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="profession"><i class="fas fa-user-tie"></i> Profession</label>
+                            <input type="text" class="form-control" id="profession" name="profession" placeholder="Your profession" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="academic_pressure"><i class="fas fa-book"></i> Academic Pressure</label>
+                            <input type="number" class="form-control" id="academic_pressure" name="academic_pressure" placeholder="Rate 1-10" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="work_pressure"><i class="fas fa-briefcase-medical"></i> Work Pressure</label>
+                            <input type="number" class="form-control" id="work_pressure" name="work_pressure" placeholder="Rate 1-10" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cgpa"><i class="fas fa-graduation-cap"></i> CGPA</label>
+                            <input type="number" class="form-control" id="cgpa" name="cgpa" placeholder="0-4 scale" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="study_satisfaction"><i class="fas fa-smile"></i> Study Satisfaction</label>
+                            <input type="number" class="form-control" id="study_satisfaction" name="study_satisfaction" placeholder="Rate 1-10" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="job_satisfaction"><i class="fas fa-clipboard-list"></i> Job Satisfaction</label>
+                            <input type="number" class="form-control" id="job_satisfaction" name="job_satisfaction" placeholder="Rate 1-10" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="sleep_duration"><i class="fas fa-bed"></i> Sleep Duration</label>
+                            <select class="form-control" id="sleep_duration" name="sleep_duration">
+                                <option value="Less than 5 hours">Less than 5 hours</option>
+                                <option value="5-6 hours">5-6 hours</option>
+                                <option value="7-8 hours">7-8 hours</option>
+                                <option value="More than 8 hours">More than 8 hours</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="dietary_habits"><i class="fas fa-apple-alt"></i> Dietary Habits</label>
+                            <select class="form-control" id="dietary_habits" name="dietary_habits">
+                                <option value="Healthy">Healthy</option>
+                                <option value="Moderate">Moderate</option>
+                                <option value="Unhealthy">Unhealthy</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="degree"><i class="fas fa-book-open"></i> Degree</label>
+                            <input type="text" class="form-control" id="degree" name="degree" placeholder="Enter your degree" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="suicidal_thoughts"><i class="fas fa-brain"></i> Suicidal Thoughts</label>
+                            <select class="form-control" id="suicidal_thoughts" name="suicidal_thoughts" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="work_study_hours"><i class="fas fa-clock"></i> Work/Study Hours Per Day</label>
+                            <input type="number" class="form-control" id="work_study_hours" name="work_study_hours" placeholder="Enter hours" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="financial_stress"><i class="fas fa-money-bill-wave"></i> Financial Stress</label>
+                            <input type="number" class="form-control" id="financial_stress" name="financial_stress" placeholder="Rate 1-10" required>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="mental_illness_history"><i class="fas fa-history"></i> Mental Illness History</label>
+                            <select class="form-control" id="mental_illness_history" name="mental_illness_history" required>
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block mt-4">Predict</button>
+                </form>
+                {% if result %}
+                <div class="alert {{ 'alert-success' if result == 'You are not depressed' else 'alert-danger' }} mt-4">
+                    The prediction is: <strong>{{ result }}</strong>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

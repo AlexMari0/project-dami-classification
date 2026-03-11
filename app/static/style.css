@@ -1,0 +1,137 @@
+body {
+    background: linear-gradient(135deg, #cce7ff, #007bff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+.card-header {
+    background: #ffffff;
+    color: #007bff;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1.5rem;
+    border-bottom: 2px solid #007bff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-header i {
+    margin-right: 10px;
+}
+
+.card-body {
+    padding: 2rem;
+    background: #f9f9f9;
+}
+
+.form-control {
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: box-shadow 0.3s ease-in-out;
+    padding: 10px 15px;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+    border-color: #007bff;
+}
+
+.btn-primary {
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    border: none;
+    border-radius: 8px;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #0056b3, #00a3c4);
+    transform: scale(1.05);
+}
+
+.alert {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.alert-danger {
+    background: linear-gradient(135deg, #ffe6e6, #ff9999); /* Merah pastel */
+    color: #660000; /* Teks merah gelap */
+    border: 1px solid #ff6666;
+}
+
+.alert-success {
+    background: linear-gradient(135deg, #e1f8e9, #9ce29c); /* Hijau lembut */
+    color: #004d00; /* Teks hijau gelap */
+    border: 1px solid #66cc66;
+}
+
+.alert:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.alert i {
+    margin-right: 10px;
+    font-size: 1.8rem;
+    vertical-align: middle;
+}
+
+.result-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: inherit; /* Menggunakan warna teks dari kelas alert */
+}
+
+.form-group label {
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.form-group label i {
+    margin-right: 8px;
+    color: #007bff;
+}
+
+.form-row {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+}
+
+.btn-primary i {
+    margin-left: 8px;
+}
